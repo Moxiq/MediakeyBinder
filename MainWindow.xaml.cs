@@ -31,6 +31,7 @@ namespace MediaKeyBinder
         private HotkeyManager _keyHandler;
         private KeyboardState _keyboardState;
         private Userdata _userdata;
+        private NotifyIcon _notifyIcon;
 
         private const string DATAPATH = "Keybinds.json";
 
@@ -42,6 +43,15 @@ namespace MediaKeyBinder
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
+
+            _notifyIcon = new NotifyIcon
+            {
+                BalloonTipText = "The app has been minimised. Click the tray icon to show.",
+                BalloonTipTitle = "Media Key Binder",
+                Text = "Media Key Binder",
+                Icon = Properties.Resources.speaker
+            };
+            _notifyIcon.Click += new EventHandler(_notifyIcon_Click);
 
             IntPtr handle = new WindowInteropHelper(this).Handle;
             HwndSource source = HwndSource.FromHwnd(handle);
@@ -55,6 +65,7 @@ namespace MediaKeyBinder
             _keyboardState.AddIgnoreKey(Keys.MediaPreviousTrack);
             _keyboardState.AddIgnoreKey(Keys.MediaPlayPause);
             _keyboardState.AddIgnoreKey(Keys.MediaStop);
+            _keyboardState.AddIgnoreKey(Keys.VolumeMute);
 
             RegisterUserData(DATAPATH);
         }
@@ -213,6 +224,52 @@ namespace MediaKeyBinder
                 txtBox.Text = _keyboardState.ToString();
             }
 
+        }
+
+        private void OnClose(object sender, CancelEventArgs args)
+        {
+            _notifyIcon.Dispose();
+            _notifyIcon = null;
+        }
+
+        private WindowState m_storedWindowState = WindowState.Normal;
+        private void OnStateChanged(object sender, EventArgs args)
+        {
+            if (WindowState == WindowState.Minimized)
+            {
+                Hide();
+                if (_notifyIcon != null)
+                {
+                    _notifyIcon.ShowBalloonTip(2000);
+                }
+            }
+            else
+            {
+                m_storedWindowState = WindowState;
+            }
+                
+        }
+
+        private void OnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            CheckTrayIcon();
+        }
+
+        private void _notifyIcon_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = m_storedWindowState;
+        }
+
+        void CheckTrayIcon()
+        {
+            ShowTrayIcon(!IsVisible);
+        }
+
+        void ShowTrayIcon(bool show)
+        {
+            if (_notifyIcon != null)
+                _notifyIcon.Visible = show;
         }
     }
 }

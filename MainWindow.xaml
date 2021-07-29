@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaKeyBinder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="473.841" Width="808.195">
+        Title="MainWindow" Height="473.841" Width="808.195"
+        Closing="OnClose"
+        StateChanged="OnStateChanged"
+        IsVisibleChanged="OnIsVisibleChanged">
     <Window.Resources>
 
         <ResourceDictionary>

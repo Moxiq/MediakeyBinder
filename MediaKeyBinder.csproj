@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A881C1E6-22F4-476E-8FC1-46CA727F6A7A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>MediaKeyBinder</RootNamespace>
     <AssemblyName>MediaKeyBinder</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -171,6 +171,12 @@
       <Project>{e9f4a3db-2b40-4094-9ace-97cc3ad6ec16}</Project>
       <Name>KeyHandler</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speaker.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
