@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaKeyBinder", "MediaKeyBinder.csproj", "{A881C1E6-22F4-476E-8FC1-46CA727F6A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandler", "FileHandler\FileHandler.csproj", "{800ABE57-C7B1-4549-8EDB-B5CA427B5658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyHandler", "KeyHandler\KeyHandler.csproj", "{E9F4A3DB-2B40-4094-9ACE-97CC3AD6EC16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A881C1E6-22F4-476E-8FC1-46CA727F6A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A881C1E6-22F4-476E-8FC1-46CA727F6A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A881C1E6-22F4-476E-8FC1-46CA727F6A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A881C1E6-22F4-476E-8FC1-46CA727F6A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{800ABE57-C7B1-4549-8EDB-B5CA427B5658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800ABE57-C7B1-4549-8EDB-B5CA427B5658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800ABE57-C7B1-4549-8EDB-B5CA427B5658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800ABE57-C7B1-4549-8EDB-B5CA427B5658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9F4A3DB-2B40-4094-9ACE-97CC3AD6EC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F4A3DB-2B40-4094-9ACE-97CC3AD6EC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9F4A3DB-2B40-4094-9ACE-97CC3AD6EC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F4A3DB-2B40-4094-9ACE-97CC3AD6EC16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5315E72B-6CD9-456F-808C-96C80B6828C9}
+	EndGlobalSection
+EndGlobal
